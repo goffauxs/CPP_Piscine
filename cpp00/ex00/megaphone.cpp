@@ -11,8 +11,7 @@ int main(int argc, char **argv)
 		while (*argv)
 		{
 			std::string str(*argv);
-			std::transform(str.begin(), str.end(), str.begin(), ::toupper);
-			std::cout << str;
+			std::cout << std::uppercase << str;
 			argv++;
 		}
 		std::cout << std::endl;
