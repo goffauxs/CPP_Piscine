@@ -10,30 +10,43 @@ void addContact(Phonebook *phonebook)
 	std::cout << "First name: ";
 	std::cin >> str;
 	contact.setFirstName(str);
-	std::cout << std::endl << "Last name: ";
+	std::cout << "Last name: ";
 	std::cin >> str;
 	contact.setLastName(str);
-	std::cout << std::endl << "Nickname: ";
+	std::cout << "Nickname: ";
 	std::cin >> str;
 	contact.setNickName(str);
-	std::cout << std::endl << "Phone number: ";
+	std::cout << "Phone number: ";
 	std::cin >> str;
 	contact.setPhoneNumber(str);
-	std::cout << std::endl << "Darkest secret: ";
+	std::cout << "Darkest secret: ";
 	std::cin >> str;
 	contact.setSecret(str);
 	phonebook->setContact(contact);
 }
 
+std::string truncate(std::string str)
+{
+	if (str.size() >= 10)
+		return (str.substr(0, 9) + ".");
+	return (str);
+}
+
 void searchContact(Phonebook *phonebook)
 {
+	std::cout << std::setw(10) << std::right << "index|";
+	std::cout << std::setw(10) <<  "first name|";
+	std::cout << "last name|";
+	std::cout << "nickname";
+	std::cout << std::endl;
 	for (int i=0; i < phonebook->getCount(); i++)
 	{
 		Contact contact;
 		contact = phonebook->getContact(i);
 		std::cout << std::setw(10) << i + 1 << "|";
-		std::cout << contact.getFirstName() << "|";
-		std::cout << contact.getLastName()
+		std::cout << std::setw(10) << contact.getFirstName() << "|";
+		std::cout << std::setw(10) << contact.getLastName() << "|";
+		std::cout << std::setw(10) << contact.getNickName() << std::endl;
 	}
 }
 
