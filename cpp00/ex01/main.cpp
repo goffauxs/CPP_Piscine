@@ -34,20 +34,22 @@ std::string truncate(std::string str)
 
 void searchContact(Phonebook *phonebook)
 {
-	std::cout << std::setw(10) << std::right << "index|";
-	std::cout << std::setw(10) <<  "first name|";
-	std::cout << "last name|";
-	std::cout << "nickname";
-	std::cout << std::endl;
+	std::cout << "┌──────────┬──────────┬──────────┬──────────┐" << std::endl;
+	std::cout << "│" << std::setw(10) << std::right << "index";
+	std::cout << "│" << std::setw(10) << std::right << "first name";
+	std::cout << "│" << std::setw(10) << std::right << "last name";
+	std::cout << "│" << std::setw(10) << std::right << "nickname" << "|" << std::endl;
+	std::cout << "├──────────┼──────────┼──────────┼──────────┤" << std::endl;
 	for (int i=0; i < phonebook->getCount(); i++)
 	{
 		Contact contact;
 		contact = phonebook->getContact(i);
-		std::cout << std::setw(10) << i + 1 << "|";
-		std::cout << std::setw(10) << contact.getFirstName() << "|";
-		std::cout << std::setw(10) << contact.getLastName() << "|";
-		std::cout << std::setw(10) << contact.getNickName() << std::endl;
+		std::cout << "|" << std::setw(10) << i + 1;
+		std::cout << "|" << std::setw(10) << truncate(contact.getFirstName());
+		std::cout << "|" << std::setw(10) << truncate(contact.getLastName());
+		std::cout << "|" << std::setw(10) << truncate(contact.getNickName()) << "|" << std::endl;
 	}
+	std::cout << "└──────────┴──────────┴──────────┴──────────┘" << std::endl;
 }
 
 int main()
@@ -61,17 +63,17 @@ int main()
 	while (1)
 	{
 		std::string command;
-		std::cout << "Enter a command: ";
+		std::cout << std::endl << "Enter a command: ";
 		std::cin >> command;
-		if (!command.compare("ADD"))
+		if (command == "ADD")
 		{
 			addContact(&phonebook);
 		}
-		else if (!command.compare("SEARCH"))
+		else if (command == "SEARCH")
 		{
 			searchContact(&phonebook);
 		}
-		else if (!command.compare("EXIT"))
+		else if (command == "EXIT" || command == "")
 		{
 			break;
 		}
