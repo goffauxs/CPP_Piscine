@@ -9,19 +9,19 @@ void addContact(Phonebook *phonebook)
 	std::string str;
 
 	std::cout << "First name: ";
-	std::cin >> str;
+	std::getline(std::cin, str);
 	contact.setFirstName(str);
 	std::cout << "Last name: ";
-	std::cin >> str;
+	std::getline(std::cin, str);
 	contact.setLastName(str);
 	std::cout << "Nickname: ";
-	std::cin >> str;
+	std::getline(std::cin, str);
 	contact.setNickName(str);
 	std::cout << "Phone number: ";
-	std::cin >> str;
+	std::getline(std::cin, str);
 	contact.setPhoneNumber(str);
 	std::cout << "Darkest secret: ";
-	std::cin >> str;
+	std::getline(std::cin, str);
 	contact.setSecret(str);
 	phonebook->setContact(contact);
 }
@@ -60,13 +60,10 @@ void searchContact(Phonebook *phonebook)
 		std::cout << "Please enter an index for relevant information: ";
 		while (!(std::cin >> index) || index > count || index < 1)
 		{
-			// if (std::cin.eof())
-			// 	return;
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			std::cout << "Invalid input. Please enter an index between 1 and " << count << ": ";
 		}
-
 		index--;
 		Contact tmp;
 		tmp = phonebook->getContact(index);
@@ -81,6 +78,7 @@ void searchContact(Phonebook *phonebook)
 	{
 		std::cout << "Table is empty!" << std::endl;
 	}
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
 int main()
@@ -95,8 +93,7 @@ int main()
 	{
 		std::string command;
 		std::cout << std::endl << "Enter a command: ";
-		std::cin >> command;
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::getline(std::cin, command);
 		if (command == "ADD")
 		{
 			addContact(&phonebook);
