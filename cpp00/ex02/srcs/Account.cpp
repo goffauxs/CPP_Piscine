@@ -7,11 +7,11 @@ void Account::_displayTimestamp( void )
 {
 	std::time_t rawtime;
 	struct tm	*timeinfo;
-	char		buffer[15];
+	char		buffer[16];
 
 	time(&rawtime);
 	timeinfo = localtime(&rawtime);
-	strftime(buffer, 15, "%Y%m%d_%H%M%S", timeinfo);
+	strftime(buffer, 16, "%Y%m%d_%H%M%S", timeinfo);
 	std::cout << "[" << buffer << "] ";
 }
 
