@@ -20,9 +20,10 @@ public:
 
 private:
 
+	static int		_count;
+
 	Contact _contacts[8];
 	int		_index;
-	int		_count;
 };
 
 #endif
