@@ -21,8 +21,8 @@ Point::~Point(void)
 
 Point& Point::operator=(const Point& rhs)
 {
-	(Fixed)this->_x = rhs._x;
-	(Fixed)this->_y = rhs._y;
+	(void)rhs;
+	std::cout << "Assignment of const variables impossible, values will stay the same as in the default constructor." << std::endl;
 	return *this;
 }
 
