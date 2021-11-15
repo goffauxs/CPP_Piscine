@@ -3,9 +3,13 @@
 class FragTrap : public ClapTrap
 {
 public:
-
+	FragTrap();
 	FragTrap(std::string name);
-	~FragTrap(void);
+	FragTrap(const FragTrap& other);
 
-	void highFivesGuys(void);
+	FragTrap& operator=(const FragTrap& rhs);
+
+	~FragTrap();
+
+	void highFivesGuys();
 };
