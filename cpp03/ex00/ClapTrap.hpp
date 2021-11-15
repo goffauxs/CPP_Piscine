@@ -1,17 +1,23 @@
+#pragma once
 #include <string>
 
 class ClapTrap
 {
 public:
 	// Constructors/Destructor
+	ClapTrap();
 	ClapTrap(std::string name);
-	~ClapTrap(void);
+	ClapTrap(const ClapTrap& other);
+
+	ClapTrap& operator=(const ClapTrap& rhs);
+
+	~ClapTrap();
 
 	void attack(std::string const & target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 
-private:
+protected:
 	std::string		_name;
 	unsigned int	_hp;
 	unsigned int	_ep;
