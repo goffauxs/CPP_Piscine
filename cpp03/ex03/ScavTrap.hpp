@@ -3,8 +3,13 @@
 class ScavTrap : virtual public ClapTrap
 {
 public:
+	ScavTrap();
 	ScavTrap(std::string name);
-	~ScavTrap(void);
+	ScavTrap(const ScavTrap& other);
 
-	void guardGate(void);
+	ScavTrap& operator=(const ScavTrap& rhs);
+
+	~ScavTrap();
+
+	void guardGate();
 };

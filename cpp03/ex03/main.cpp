@@ -1,5 +1,4 @@
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
@@ -8,6 +7,7 @@ int main()
 	ClapTrap joe("Joe");
 	ScavTrap jane("Jane");
 	FragTrap joseph("Joseph");
+	DiamondTrap daniel("Daniel");
 
 	john.attack("Marge");
 	john.attack("Bart");
@@ -25,4 +25,10 @@ int main()
 	joseph.takeDamage(99);
 	joseph.beRepaired(50);
 	joseph.highFivesGuys();
+	daniel.attack("Ned");
+	daniel.takeDamage(5);
+	daniel.beRepaired(3);
+	daniel.guardGate();
+	daniel.highFivesGuys();
+	daniel.whoAmI();
 }
