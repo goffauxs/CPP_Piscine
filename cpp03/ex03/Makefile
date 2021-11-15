@@ -1,4 +1,4 @@
-NAME		=	FragTrap
+NAME		=	DiamondTrap
 
 CC			=	clang++
 INCLUDES	=	includes
