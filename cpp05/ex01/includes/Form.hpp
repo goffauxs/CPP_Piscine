@@ -45,6 +45,15 @@ public:
 		}
 	};
 
+	class FormAlreadySignedException : public std::exception
+	{
+	public:
+		const char* what() const throw()
+		{
+			return ("form is already signed");
+		}
+	};
+
 private:
 
 	const std::string	_name;

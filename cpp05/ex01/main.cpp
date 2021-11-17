@@ -35,6 +35,7 @@ int main()
 	std::cout << b << std::endl;
 	john.signForm(a);
 	john.signForm(b);
+	john.signForm(b);
 	
 	try
 	{

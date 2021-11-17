@@ -57,10 +57,15 @@ bool Form::isSigned() const
 
 void Form::beSigned(const Bureaucrat& candidate)
 {
-	if (candidate.getGrade() <= this->_gradeSign)
-		this->_signed = true;
+	if (!this->_signed)
+	{
+		if (candidate.getGrade() <= this->_gradeSign)
+			this->_signed = true;
+		else
+			throw Form::GradeTooLowException();
+	}
 	else
-		throw Form::GradeTooLowException();
+		throw Form::FormAlreadySignedException();
 }
 
 std::ostream& operator<<(std::ostream& o, const Form& rhs)
