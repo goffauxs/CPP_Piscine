@@ -30,9 +30,8 @@ Form* Intern::makeForm(const std::string& formName, const std::string& target) c
 			tmp = new PresidentialPardonForm(target);
 			break;
 		default:
-			std::cout << "Unknown form type: " << formName << std::endl;
+			throw Intern::InvalidFormException();
 	}
-	if (tmp)
-		std::cout << "Intern creates " << formName << std::endl;
+	std::cout << "Intern creates " << formName << std::endl;
 	return tmp;
 }
