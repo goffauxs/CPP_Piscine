@@ -1,11 +1,12 @@
-NAME		=	Bureaucrat
+NAME		=	Forms
 
 CC			=	clang++
 INCLUDES	=	includes
 CPPFLAGS	=	-Wall -Werror -Wextra -I$(INCLUDES)
 RM			=	rm -rf
 
-SRCS		=	Bureaucrat.cpp \
+SRCS		=	srcs/Bureaucrat.cpp \
+				srcs/Form.cpp \
 				main.cpp
 
 OBJS		=	$(SRCS:%.cpp=%.o)
