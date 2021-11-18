@@ -69,12 +69,18 @@ bool Fixed::operator!=(const Fixed& rhs)
 //Arithmetic operators
 Fixed Fixed::operator+(const Fixed& rhs)
 {
-	return Fixed(this->_fixedPoint + rhs._fixedPoint);
+	Fixed ret;
+
+	ret.setRawBits(this->_fixedPoint + rhs._fixedPoint);
+	return ret;
 }
 
 Fixed Fixed::operator-(const Fixed& rhs)
 {
-	return Fixed(this->_fixedPoint - rhs._fixedPoint);
+	Fixed ret;
+
+	ret.setRawBits(this->_fixedPoint - rhs._fixedPoint);
+	return ret;
 }
 
 Fixed Fixed::operator*(const Fixed& rhs)
@@ -89,7 +95,7 @@ Fixed Fixed::operator/(const Fixed& rhs)
 {
 	Fixed ret;
 
-	ret.setRawBits(this->_fixedPoint / rhs._fixedPoint << fraction);
+	ret.setRawBits((this->_fixedPoint * (1 << fraction)) / rhs._fixedPoint);
 	return ret;
 }
 
