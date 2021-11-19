@@ -1,15 +1,11 @@
-NAME		=	Animal
+NAME		=	convert
 
 CC			=	clang++
 INCLUDES	=	includes
 CPPFLAGS	=	-Wall -Werror -Wextra -I$(INCLUDES)
 RM			=	rm -rf
 
-SRCS		=	srcs/Animal.cpp \
-				srcs/Cat.cpp \
-				srcs/Dog.cpp \
-				srcs/WrongAnimal.cpp \
-				srcs/WrongCat.cpp \
+SRCS		=	Scalar.cpp \
 				main.cpp
 
 OBJS		=	$(SRCS:%.cpp=%.o)
