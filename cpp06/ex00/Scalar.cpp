@@ -186,7 +186,10 @@ std::ostream& operator<<(std::ostream& o, const Scalar& rhs)
 	{
 		float f;
 		f = rhs.toFloat();
-		o.precision(1);
+		if (f - static_cast<int>(f) > 0)
+			o.precision(5);
+		else
+			o.precision(1);
 		o << std::fixed << f << "f" << std::endl;
 	}
 	catch(const std::exception& e)
@@ -198,7 +201,10 @@ std::ostream& operator<<(std::ostream& o, const Scalar& rhs)
 	{
 		double d;
 		d = rhs.toDouble();
-		o.precision(1);
+		if (d - static_cast<int>(d) > 0)
+			o.precision(5);
+		else
+			o.precision(1);
 		o << std::fixed << d << std::endl;
 	}
 	catch(const std::exception& e)
