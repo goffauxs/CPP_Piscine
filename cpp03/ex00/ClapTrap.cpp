@@ -38,7 +38,7 @@ void ClapTrap::attack(std::string const & target)
 	std::cout << "ClapTrap " << this->_name;
 	if (this->_ep > 0)
 	{
-		this->_ep -= 5;
+		this->_ep -= (this->_ep >= 5) ? 5 : this->_ep;
 		std::cout << " attacked " << target << ", causing " << this->_ad << " points of damage!" << std::endl;
 	}
 	else
