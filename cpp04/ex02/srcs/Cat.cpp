@@ -1,19 +1,19 @@
 #include "Cat.hpp"
 
 Cat::Cat()
-	: AAnimal("Cat"), _brain(new Brain())
+	: Animal("Cat"), _brain(new Brain())
 {
 	std::cout << "Cat(void) constructor called" << std::endl;
 }
 
 Cat::Cat(std::string type)
-	: AAnimal(type), _brain(new Brain())
+	: Animal(type), _brain(new Brain())
 {
 	std::cout << "Cat(\"" << type << "\") constructor called" << std::endl;
 }
 
 Cat::Cat(const Cat& other)
-	: AAnimal(other)
+	: Animal(other)
 {
 	this->_brain = new Brain(*other._brain);
 	std::cout << "Cat copy constructor called on " << other._type << std::endl;

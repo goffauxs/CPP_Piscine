@@ -1,7 +1,7 @@
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : public AAnimal
+class Cat : public Animal
 {
 public:
 	// Constructors

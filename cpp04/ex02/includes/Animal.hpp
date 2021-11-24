@@ -1,19 +1,19 @@
 #pragma once
 #include <iostream>
 
-class AAnimal
+class Animal
 {
 public:
 	// Constructors
-	AAnimal();
-	AAnimal(std::string type);
-	AAnimal(const AAnimal& other);
+	Animal();
+	Animal(std::string type);
+	Animal(const Animal& other);
 
 	// Assignment operator overload
-	AAnimal& operator=(const AAnimal& rhs);
+	Animal& operator=(const Animal& rhs);
 	
 	// Destructors
-	virtual ~AAnimal();
+	virtual ~Animal();
 
 	// Getters
 	std::string getType() const;

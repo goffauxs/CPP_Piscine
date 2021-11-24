@@ -5,7 +5,7 @@ INCLUDES	=	includes
 CPPFLAGS	=	-Wall -Werror -Wextra -I$(INCLUDES)
 RM			=	rm -rf
 
-SRCS		=	srcs/AAnimal.cpp \
+SRCS		=	srcs/Animal.cpp \
 				srcs/Cat.cpp \
 				srcs/Dog.cpp \
 				srcs/Brain.cpp \

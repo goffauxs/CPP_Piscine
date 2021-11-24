@@ -1,19 +1,19 @@
 #include "Dog.hpp"
 
 Dog::Dog()
-	: AAnimal("Dog"), _brain(new Brain())
+	: Animal("Dog"), _brain(new Brain())
 {
 	std::cout << "Dog(void) constructor called" << std::endl;
 }
 
 Dog::Dog(std::string type)
-	: AAnimal(type), _brain(new Brain())
+	: Animal(type), _brain(new Brain())
 {
 	std::cout << "Dog(\"" << type << "\") constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog& other)
-	: AAnimal(other)
+	: Animal(other)
 {
 	this->_brain = new Brain(*other._brain);
 	std::cout << "Dog copy constructor called on " << other._type << std::endl;
