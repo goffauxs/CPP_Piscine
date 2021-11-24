@@ -6,7 +6,7 @@ CPPFLAGS	=	-Wall -Werror -Wextra -I$(INCLUDES)
 RM			=	rm -rf
 
 SRCS		=	main.cpp \
-				srcs/Span.cpp
+				srcs/mutantstack.cpp
 
 OBJS		=	$(SRCS:%.cpp=%.o)
 
