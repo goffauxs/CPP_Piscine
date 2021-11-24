@@ -26,7 +26,7 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs)
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "WrongAnimal deconstructor called for " << this->_type << std::endl;
+	std::cout << "WrongAnimal destructor called for " << this->_type << std::endl;
 }
 
 void WrongAnimal::makeSound() const

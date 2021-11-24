@@ -26,7 +26,7 @@ Dog& Dog::operator=(const Dog& rhs)
 
 Dog::~Dog()
 {
-	std::cout << "Dog deconstructor called for " << this->_type << std::endl;
+	std::cout << "Dog destructor called for " << this->_type << std::endl;
 }
 
 void Dog::makeSound() const

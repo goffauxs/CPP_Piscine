@@ -13,7 +13,7 @@ public:
 	WrongAnimal& operator=(const WrongAnimal& rhs);
 	
 	// Destructor
-	~WrongAnimal();
+	virtual ~WrongAnimal();
 
 	// Getters
 	std::string getType() const;

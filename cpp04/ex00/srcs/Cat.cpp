@@ -26,7 +26,7 @@ Cat& Cat::operator=(const Cat& rhs)
 
 Cat::~Cat()
 {
-	std::cout << "Cat deconstructor called for " << this->_type << std::endl;
+	std::cout << "Cat destructor called for " << this->_type << std::endl;
 }
 
 void Cat::makeSound() const

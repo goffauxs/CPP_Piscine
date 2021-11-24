@@ -15,5 +15,5 @@ public:
 	~Cat();
 
 	// Member functions
-	virtual void makeSound() const;
+	void makeSound() const;
 };

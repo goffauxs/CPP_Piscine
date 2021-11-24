@@ -12,8 +12,8 @@ public:
 	// Assignment operator overload
 	Animal& operator=(const Animal& rhs);
 	
-	// Destructors
-	~Animal();
+	// Destructor
+	virtual ~Animal();
 
 	// Getters
 	std::string getType() const;

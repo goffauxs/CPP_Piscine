@@ -15,5 +15,5 @@ public:
 	~Dog();
 
 	// Member functions
-	virtual void makeSound() const;
+	void makeSound() const;
 };

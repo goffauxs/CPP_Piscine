@@ -1,7 +1,7 @@
 #include "Animal.hpp"
 
 Animal::Animal()
-	: _type("")
+	: _type("Animal")
 {
 	std::cout << "Animal(void) constructor called" << std::endl;
 }
@@ -26,7 +26,7 @@ Animal& Animal::operator=(const Animal& rhs)
 
 Animal::~Animal()
 {
-	std::cout << "Animal deconstructor called for " << this->_type << std::endl;
+	std::cout << "Animal destructor called for " << this->_type << std::endl;
 }
 
 void Animal::makeSound() const
