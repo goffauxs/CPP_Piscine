@@ -41,7 +41,7 @@ int main()
 		delete src;
 	}
 
-	system("leaks Interface");
+	// system("leaks Interface");
 
 	return 0;
 }
