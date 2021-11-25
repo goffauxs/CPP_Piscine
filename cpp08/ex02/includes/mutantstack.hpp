@@ -5,26 +5,25 @@ class MutantStack : public std::stack<T, Container>
 {
 public:
 	// Constructors
-	MutantStack();
-	MutantStack(const MutantStack<T, Container>& other);
+	MutantStack() : MutantStack<T, Container>::stack() {};
+	MutantStack(const MutantStack<T, Container>& other) : MutantStack<T, Container>::stack(other) {};
 
 	// Assignment operator overload
-	MutantStack<T, Container>& operator=(const MutantStack<T, Container>& rhs);
+	MutantStack<T, Container>& operator=(const MutantStack<T, Container>& rhs)
+	{
+		if (this != &rhs)
+			this->MutantStack<T, Container>::stack::operator=(rhs);
+		return *this;
+	}
 
 	// Destructor
-	~MutantStack();
+	virtual ~MutantStack() {};
 
 	typedef typename Container::iterator				iterator;
-	typedef typename Container::const_iterator			const_iterator;
 	typedef typename Container::reverse_iterator		reverse_iterator;
-	typedef typename Container::const_reverse_iterator	const_reverse_iterator;
 
-	iterator				begin();
-	iterator				end();
-	const_iterator			cbegin() const;
-	const_iterator			cend() const;
-	reverse_iterator		rbegin();
-	reverse_iterator		rend();
-	const_reverse_iterator	crbegin() const;
-	const_reverse_iterator	crend() const;
+	iterator				begin() { return this->c.begin(); };
+	iterator				end() { return this->c.end(); };
+	reverse_iterator		rbegin() { return this->c.rbegin(); };
+	reverse_iterator		rend() { return this->c.rend(); };
 };
