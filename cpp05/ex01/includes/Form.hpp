@@ -8,7 +8,6 @@ class Form
 {
 public:
 	// Constructor
-	Form();
 	Form(const std::string& name);
 	Form(const std::string& name, const unsigned int gradeSign, const unsigned int gradeExec);
 	Form(const Form& other);
@@ -55,6 +54,8 @@ public:
 	};
 
 private:
+
+	Form() : _name(""), _signed(false), _gradeSign(1), _gradeExec(1) {};
 
 	const std::string	_name;
 	bool				_signed;
