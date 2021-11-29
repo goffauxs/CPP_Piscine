@@ -1,11 +1,6 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form()
-	: _name("Default"), _target(""), _signed(false), _gradeSign(1), _gradeExec(1)
-{
-}
-
 Form::Form(const std::string& name)
 	: _name(name), _target(""), _signed(false), _gradeSign(1), _gradeExec(1)
 {

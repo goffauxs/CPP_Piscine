@@ -8,7 +8,6 @@ class Form
 {
 public:
 	// Constructor
-	Form();
 	Form(const std::string& name);
 	Form(const std::string& name, const std::string& target);
 	Form(const std::string& name, const unsigned int gradeSign, const unsigned int gradeExec);
@@ -69,6 +68,8 @@ public:
 	};
 
 private:
+
+	Form() : _name(""), _target(""), _signed(false), _gradeSign(1), _gradeExec(1) {};
 
 	const std::string	_name;
 	const std::string	_target;
