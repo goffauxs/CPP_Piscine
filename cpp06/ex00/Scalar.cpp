@@ -186,9 +186,8 @@ std::ostream& operator<<(std::ostream& o, const Scalar& rhs)
 	{
 		float f;
 		f = rhs.toFloat();
-		if (f - static_cast<int>(f) > 0)
-			o.precision(5);
-		else
+		double intPart;
+		if (modf(f, &intPart) == 0)
 			o.precision(1);
 		o << std::fixed << f << "f" << std::endl;
 	}
@@ -201,9 +200,8 @@ std::ostream& operator<<(std::ostream& o, const Scalar& rhs)
 	{
 		double d;
 		d = rhs.toDouble();
-		if (d - static_cast<int>(d) > 0)
-			o.precision(5);
-		else
+		double intPart;
+		if (modf(d, &intPart) == 0)
 			o.precision(1);
 		o << std::fixed << d << std::endl;
 	}
