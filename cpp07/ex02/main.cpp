@@ -38,7 +38,6 @@ int main()
 
 	Array<int> e;
 
-
 	try
 	{
 		std::cout << e[0] << std::endl;
