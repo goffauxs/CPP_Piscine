@@ -51,11 +51,11 @@ unsigned int Span::shortestSpan() const
 {
 	std::vector<int> tmp;
 
+	int (*iabs)(int) = &std::abs;
 	if (this->_v.size() <= 1)
 		throw ContainerEmptyException();
 	std::adjacent_difference(this->_v.begin(), this->_v.end(), std::back_inserter(tmp));
-	for (std::vector<int>::iterator it = tmp.begin(); it != tmp.end(); it++)
-		*it = abs(*it);
+	std::transform(tmp.begin(), tmp.end(), tmp.begin(), iabs);
 	return *min_element(tmp.begin(), tmp.end());
 }
 
@@ -63,10 +63,10 @@ unsigned int Span::longestSpan() const
 {
 	std::vector<int> tmp;
 
+	int (*iabs)(int) = &std::abs;
 	if (this->_v.size() <= 1)
 		throw ContainerEmptyException();
 	std::adjacent_difference(this->_v.begin(), this->_v.end(), std::back_inserter(tmp));
-	for (std::vector<int>::iterator it = tmp.begin(); it != tmp.end(); it++)
-		*it = abs(*it);
+	std::transform(tmp.begin(), tmp.end(), tmp.begin(), iabs);
 	return *max_element(tmp.begin(), tmp.end());
 }
